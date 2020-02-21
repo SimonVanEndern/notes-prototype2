@@ -5,6 +5,7 @@ var router = express.Router()
 
 router.route('/note')
 	.get(function (req, res, next) {
+		console.log(req.body)
 		Note.find(function (err, notes) {
 			if (err) {
 				res.status(500).end()
