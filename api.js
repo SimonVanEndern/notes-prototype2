@@ -28,6 +28,13 @@ router.route('/note')
 			if (err) {
 				res.status(500).end()
 			} else {
-				res.status(200).json(note)
+				if (!note) {
+					res.status(404).end()
+				} else {
+					res.status(200).json(note)
+				}
 			}
+		})
 	})
+
+module.exports = router
